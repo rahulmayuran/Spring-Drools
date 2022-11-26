@@ -7,9 +7,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Order {
-    private String name;
-    private String cardType;
-    private int discount;
+public class IndianCars {
+
+    private String brand;
+    private String model;
     private int price;
+
+    private int discount;
+    private int finalPrice;
 }

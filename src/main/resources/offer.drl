@@ -1,26 +1,56 @@
 package KieRule;
-import com.drools.model.Order;
+import com.drools.model.IndianCars;
 
-rule "HDFC"
+rule "Brezza"
 
 when
-orderObject : Order(cardType=="HDFC" && price>10000);
+ms : IndianCars(model=="Brezza" && brand=="Maruti" && price > 1000000);
 then
-orderObject.setDiscount(10);
+ms.setDiscount(10);
+ms.setFinalPrice(ms.getPrice() - (ms.getPrice()/ms.getDiscount()) );
 end;
 
-rule "ICICI"
+rule "Swift"
 
 when
-orderObject : Order(cardType=="ICICI" && price>15000);
+ms : IndianCars(model=="Swift" && brand=="Maruti" && price > 1000000);
 then
-orderObject.setDiscount(8);
+ms.setDiscount(8);
+ms.setFinalPrice(ms.getPrice() - (ms.getPrice()/ms.getDiscount()) );
 end;
 
-rule "DBS"
+rule "Dzire"
 
 when
-orderObject : Order(cardType=="DBS" && price>15000);
+ms : IndianCars(model=="Dzire" && brand=="Maruti" && price > 1000000);
 then
-orderObject.setDiscount(15);
+ms.setDiscount(15);
+ms.setFinalPrice(ms.getPrice() - (ms.getPrice()/ms.getDiscount()) );
+end;
+
+rule "Creta"
+
+when
+ms : IndianCars(model=="Creta" && brand=="Hyundai" && price > 1200000);
+then
+ms.setDiscount(9);
+ms.setFinalPrice(ms.getPrice() - (ms.getPrice()/ms.getDiscount()) );
+end;
+
+rule "i20"
+
+when
+ms : IndianCars(model=="i20" && brand=="Hyundai" && price > 1200000);
+then
+ms.setDiscount(7);
+ms.setFinalPrice(ms.getPrice() - (ms.getPrice()/ms.getDiscount()) );
+end;
+
+rule "Verna"
+
+when
+ms : IndianCars(model=="Verna" && brand=="Hyundai" && price > 1200000);
+then
+ms.setDiscount(14);
+ms.setFinalPrice(ms.getPrice() - (ms.getPrice()/ms.getDiscount()) );
 end;

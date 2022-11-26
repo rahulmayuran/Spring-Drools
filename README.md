@@ -28,7 +28,29 @@ Tools required for integrating Spring boot with drools rule engine
 
 Output
 -----------
-Test from Postman 
+Test from Postman
 
 - response - 200 for a POST call
 - body - should have the defined rule parameter based on condition provided in .drl file
+
+### **Request Body**
+
+```javascript
+    {
+       "brand" : "Hyundai",
+       "model" : "Verna", 
+       "price" : 1900000
+    }
+   ```
+
+### **Response Body**
+
+```javascript
+   {
+        "brand": "Hyundai",
+        "model": "Verna",
+        "price": 1900000,
+        "discount": 15,
+        "finalPrice": 1773334
+    }
+   ```
