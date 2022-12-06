@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DroolConfig {
 
-	private final KieServices kieServices = KieServices.Factory.get();
+	private  KieServices kieServices = KieServices.Factory.get();
 
 	@Bean
 	public KieContainer kieContainer() {
